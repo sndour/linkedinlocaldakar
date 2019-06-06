@@ -74,7 +74,24 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": ["src/assets/js/jquery.bootstrap.min.js",
+              "src/assets/js/appear.js",
+              "src/assets/js/bxslider.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/isotope.js",
+              "src/assets/js/jquery-ui.js",
+              "src/assets/js/jquery.countdown.min.js",
+              "src/assets/js/jquery.countTo.js",
+              "src/assets/js/jquery.fancybox.js",
+              "src/assets/js/jquery.js",
+              "src/assets/js/jquery.mixitup.min.js",
+              "src/assets/js/map-script.js",
+              "src/assets/js/mixitup.js",
+              "src/assets/js/owl.js",
+              "src/assets/js/poper.min.js",
+              "src/assets/js/validate.js",
+              "src/assets/js/wow.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
