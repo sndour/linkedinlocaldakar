@@ -238,7 +238,7 @@ select:focus {
   letter-spacing: 1px;
 }
 .sec-title h2 span{
-  color: #fa334f;
+  color: #3778b7;
 }
 .sec-title h2:before{
   position: absolute;
@@ -246,7 +246,7 @@ select:focus {
   left: 0;
   width: 76px;
   height: 2px;
-  background: #fa334f;
+  background: #3778b7;
   content: '';
 }
 
