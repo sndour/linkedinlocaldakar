@@ -148,23 +148,23 @@ select:focus {
   font-weight: 700;
   color: #ffffff;
   line-height: 26px;
-  background: #fa334f;
+  background: #3776b6;
   padding: 12px 32px;
   border-radius: 2px;
-  border: 1px solid #fa334f;
+  border: 1px solid #3776b6;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
 }
 .btn-style-one:hover{
-  color: #fa334f;
+  color: #3776b6;
   background: transparent;
-  border: 1px solid #fa334f;
+  border: 1px solid #3776b6;
 }
 .btn-style-two{
   font-size: 15px;
   font-weight: 700;
-  color: #fa334f;
+  color: #3776b6;
   line-height: 26px;
   background: white;
   padding: 16px 47px;
@@ -177,8 +177,8 @@ select:focus {
 }
 .btn-style-two:hover{
   color: #ffffff;
-  background: #fa334f;
-  border-color: #fa334f;
+  background: #3776b6;
+  border-color: #3776b6;
 }
 .btn-style-three{
   font-size: 15px;
@@ -269,7 +269,7 @@ select:focus {
   letter-spacing: 1px;
 }
 .sec-title-two h2 span{
-  color: #fa334f;
+  color: #285caa;
 }
 .sec-title-two h2:before{
   position: absolute;
@@ -278,7 +278,7 @@ select:focus {
   width: 76px;
   height: 2px;
   margin-left: -38px;
-  background: #fa334f;
+  background: #285caa;
   content: '';
 }
 .sec-title-three h2{
@@ -324,7 +324,7 @@ select:focus {
 ***/
 
 .scroll-to-top {
-  background: #fa334f;
+  background: #3675b6;
   border-radius: 50%;
   bottom: 30px;
   color: #fff;
@@ -345,7 +345,7 @@ select:focus {
   box-shadow: 0px 8px 23px -6px rgba(27,27,27,1);
 }
 .scroll-to-top:hover {
-  background: #33343f;
+  background: #48a0d0;
 }
 
 /*** 
@@ -399,7 +399,7 @@ select:focus {
 
 .header-top .top-left .header-info-list li .icon{
   position:relative;
-  color: #fa334f;
+  color: #3675b6;
   font-size: 18px;
   margin-right: 8px;
   display:inline-block;
@@ -432,7 +432,7 @@ select:focus {
 
 .header-top .top-right .social-box li a{
   position: relative;
-  color: #fa334f;
+  color: #3675b6;
   font-size: 16px;
   -webkit-transition:all 300ms ease;
   -ms-transition:all 300ms ease;
@@ -442,7 +442,7 @@ select:focus {
 }
 
 .header-top .top-right .social-box li a:hover{
-  color:#ee2d50;
+  color:#53aad3;
 }
 
 /*Header Top Two*/
@@ -860,7 +860,7 @@ select:focus {
 
 .sticky-header .main-menu .navigation > li:hover > a,
 .sticky-header .main-menu .navigation > li.current > a{
-  color:#ee2d50 !important;
+  color:#3675b6 !important;
   background-color:inherit !important;
 }
 
@@ -1008,7 +1008,7 @@ select:focus {
 .main-header.light-version .main-menu .navigation > li:hover > a,
 .main-header.light-version .main-menu .navigation > li.current > a{
   opacity:1;
-  color:#ee2d50;
+  color:#3675b6;
 }
 
 .main-menu .navigation > li > ul{
@@ -1028,7 +1028,7 @@ select:focus {
     -o-transition: all 500ms ease;
   padding: 0px 0px;
   background-color: #ffffff;
-  border-top: 3px solid #ee2d50;
+  border-top: 3px solid #4281bb;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.10);
 }
 
@@ -1084,7 +1084,7 @@ select:focus {
 
 .main-menu .navigation > li > ul > li:hover > a{
   color:#ffffff;
-  background:#ee2d50;
+  background:#448abf;
 }
 
 .main-menu .navigation > li > ul > li.dropdown > a:after{
@@ -1584,7 +1584,7 @@ select:focus {
 }
 .about-item-one i:before{
   font-size: 40px;
-  color: #fa334f;
+  color:#3271b0;
 }
 .about-item-one span{
   font-size: 15px;
@@ -1823,7 +1823,7 @@ select:focus {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
-  background-color: rgba(250, 51, 80, 0.8);
+  background-color: rgba(37, 86, 166, 0.8);
 }
 
 .team-block:hover .image-box:before {
@@ -1884,7 +1884,7 @@ select:focus {
 }
 
 .team-block .image-box .social-links li:hover a{
-  color: #f44438;
+  color: #2f6caf;
 }
 
 .team-block .info-box{
@@ -1919,14 +1919,14 @@ select:focus {
 }
 
 .team-block .info-box .name a:hover{
-  color: #f44438;
+  color: #4faed4;
 }
 
 .team-block .info-box .designation{
   display: block;
   font-size: 14px;
   line-height: 20px;
-  color: #f44437;
+  color: #2e6aaf;
   font-weight: 400;
 }
 
@@ -1995,7 +1995,7 @@ select:focus {
   font-size: 16px;
   line-height: 25px;
   font-weight: 700;
-  color: #fa334f;
+  color: #2b62ab;
 }
 .testimonials-section .owl-theme .owl-prev{
   position: absolute;
@@ -2068,7 +2068,7 @@ select:focus {
   width: 100%;
   height: 100%;
   content: '';
-  background: #fa334f;
+  background: #285da8;
 }
 .schedule-area .item.active:after {
   position: absolute;
@@ -2263,7 +2263,7 @@ select:focus {
     text-align: center;
     height: 70px;
     line-height: 70px;
-    background: #fa334f;
+    background: #306dae;
     border-radius: 50%;
 }
 
@@ -2279,7 +2279,7 @@ select:focus {
 .gallery-bottom{
   position: relative;
   padding: 100px 0px;
-  background: #fa334f;
+  background: #2556a6;
 }
 .gallery-bottom .link-btn{
   margin-top: 20px;
@@ -2511,7 +2511,7 @@ select:focus {
 .newslatter-section{
   position: relative;
   padding: 95px 0px;
-  background: #fa334f;
+  background: #2556a6;
 }
 .newslatter-section form{
   max-width: 670px;
@@ -2527,11 +2527,12 @@ select:focus {
   font-weight: 400;
   line-height: 28px;
   padding: 15px 30px;
-  background: #ff566e;
+  background: #55bbdc;
   width: 67%;
   margin-right: 30px;
   display: inline-block;
   border: none;
+  border-radius: 5px;
 }
 .newslatter-section ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #ffffff;
@@ -2572,7 +2573,7 @@ select:focus {
   background: #303030;
 }
 .contact-info-item-one .icon-box i:before{
-  color: #fa334f;
+  color: #55bade;
   font-size: 30px;
 }
 .contact-info-item-one .text{
@@ -2661,7 +2662,7 @@ select:focus {
   transition: all 300ms ease;
 }
 .main-footer .social-links li:hover a{
-  color: #fa334f;
+  color: #51b2d9;
   transition: all 300ms ease;
 }
 
@@ -2685,7 +2686,7 @@ select:focus {
 }
 
 .copyright-text a {
-  color: #fa334f;
+  color: #57bee0;
 }
 
 
