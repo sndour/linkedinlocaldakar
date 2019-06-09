@@ -220,22 +220,22 @@
           <div class="testimonial-carousel owl-carousel owl-theme">
               <div class="testimonial-item-one text-center">
                   <span>“</span>
-                  <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative</p>
-                  <h6>Alex Patterson</h6>
-                  <div class="text">UI Designer, CNN</div>
+                  <p>Great Linkedin Local Dakar ! Merci pour la magnifique opportunité d'interactions. Et encore Félicitations à toute l'équipe</p>
+                  <h6>Ndeye Ndiaye CISSE LAKH</h6>
+                  <!-- <div class="text">UI Designer, CNN</div> -->
               </div>
               <div class="testimonial-item-one text-center">
+                  <span>“</span>
+                  <p>You make it happened</p>
+                  <h6>Malick NDIAYE</h6>
+                  <!-- <div class="text">UI Designer, CNN</div> -->
+              </div>
+              <!-- <div class="testimonial-item-one text-center">
                   <span>“</span>
                   <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative</p>
                   <h6>Alex Patterson</h6>
                   <div class="text">UI Designer, CNN</div>
-              </div>
-              <div class="testimonial-item-one text-center">
-                  <span>“</span>
-                  <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative</p>
-                  <h6>Alex Patterson</h6>
-                  <div class="text">UI Designer, CNN</div>
-              </div>
+              </div> -->
           </div>
       </div>                    
   </div>
@@ -554,7 +554,7 @@
                           </tbody>
                       </table>
                   </div>
-              </div> -->
+              </div> x
               <div id="day-three" class="item1">
                   <div class="inner-box  table-responsive">
                       <table class="table table-hover">
@@ -631,7 +631,7 @@
                           </tbody>
                       </table>
                   </div>
-              </div>
+              </div>-->
           </div>
       </div>                
   </div>
@@ -737,10 +737,12 @@
 <section class="gallery-bottom">
   <div class="container clearfix">
       <div class="sec-title-three float-left">
-          <h2>Surround yourself with people <br>who sync with you</h2>
+          <h2>
+            Entourez-vous de gens<br>
+            qui se synchronisent avec vous</h2>
       </div>
       <div class="link-btn float-right">
-          <a href="#" class="theme-btn btn-style-two">Know more</a>
+          <a href="#" class="theme-btn btn-style-two">Prenez une place</a>
       </div>
   </div>
 </section>
@@ -768,7 +770,7 @@
                       <!-- <li>Papers</li> -->
                   </ul>
                   <div class="link-btn">
-                      <a href="#" class="theme-btn btn-style-one">Prendre Sa Place</a>
+                      <a href="#" data-toggle="modal" data-target="#Modal20" class="theme-btn btn-style-one">Prendre Sa Place</a>
                   </div>
               </div>
           </div>
@@ -787,7 +789,7 @@
                     <li>Attestation</li>
                   </ul>
                   <div class="link-btn">
-                      <a href="#" class="theme-btn btn-style-one">Prendre Sa Place</a>
+                      <a href="#" data-toggle="modal" data-target="#Modal30"  class="theme-btn btn-style-one">Prendre Sa Place</a>
                   </div>
               </div>
           </div>
@@ -934,3 +936,75 @@
   </div>
 </section>
 <!--End Contact Info-->
+
+  <div class="modal fade" id="Modal20" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+   
+        <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">  <span aria-hidden="true">&times;</span>
+                </button>
+                <form [formGroup]="payementForm20" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Nom:</label>
+                          <input type="text" class="form-control" id="recipient-name" required formControlName="nom" placeholder="Entrez votre nom">
+                        </div>
+                        <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Prénom:</label>
+                                <input type="text" class="form-control" required formControlName="prenom" id="recipient-name" placeholder="Entrez votre prénom">
+                        </div>
+                        <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Email:</label>
+                                <input type="email" class="form-control" formControlName="email" id="recipient-prenom" placeholder="example@exemple.com">
+                        </div>
+                        <div class="form-group">
+                                 <label for="recipient-name" class="col-form-label">Numéro de telephone:</label>
+                                 <input type="text" class="form-control" formControlName="tel" id="recipient-name" placeholder="221xxxxxxxxx">
+                        </div>
+                        
+                       <button class="theme-btn btn-style-one" type="submit" [disabled]="!payementForm20.valid">Payer sa place pour LinkedIn Local Dakar</button>
+                      </form><br/>
+               
+          <!-- ... <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Payer</button> -->
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="Modal30" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+       
+            <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">  <span aria-hidden="true">&times;</span>
+                    </button>
+                    <form [formGroup]="payementForm30" (ngSubmit)="onSubmit30()">
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Nom:</label>
+                              <input type="text" class="form-control" id="recipient-name" required formControlName="nom" placeholder="Entrez votre nom">
+                            </div>
+                            <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Prénom:</label>
+                                    <input type="text" class="form-control" required formControlName="prenom" id="recipient-name" placeholder="Entrez votre prénom">
+                            </div>
+                            <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Email:</label>
+                                    <input type="email" class="form-control" formControlName="email" id="recipient-prenom" placeholder="example@exemple.com">
+                            </div>
+                            <div class="form-group">
+                                     <label for="recipient-name" class="col-form-label">Numéro de telephone:</label>
+                                     <input type="text" class="form-control" formControlName="tel" id="recipient-name" placeholder="221xxxxxxxxx">
+                            </div>
+                            
+                           <button class="theme-btn btn-style-one" type="submit" [disabled]="!payementForm30.valid">Payer sa place pour LinkedIn Local Dakar</button>
+                          </form><br/>
+                   
+              <!-- ... <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Payer</button> -->
+            </div>
+           
+          </div>
+        </div>
+      </div>

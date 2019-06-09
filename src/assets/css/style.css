@@ -2149,18 +2149,18 @@ select:focus {
 .schedule-section .table thead tr{
   height: 100px;
   padding: 45px 0px;
-  background: -webkit-gradient(linear, left top, right top, from(#321575), color-stop(51%, #8d0b93), color-stop(100%, #fa334f), to(#fa334f));
+  background: -webkit-gradient(linear, left top, right top, from(#2556a6), color-stop(51%, #4190c8), color-stop(100%, #4190c8), to(#4190c8));
 }
 .schedule-section .table-hover tbody tr:hover {
   background: #f3f3f3!important;
 }
 .schedule-section .table thead tr th,
 .schedule-section .table tbody tr td{
-  border-right: 1px solid #ffdadf;
+  border-right: 1px solid #295eab;;
 }
 .schedule-section .table tbody tr td{
-  border-left: 1px solid #ffdadf;
-  border-bottom: 1px solid #ffdadf;
+  border-left: 1px solid #295eab;;
+  border-bottom: 1px solid #295eab;;
 }
 .schedule-section .table thead tr th{
   font-size: 20px;

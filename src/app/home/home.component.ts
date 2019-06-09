@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  payementForm20 = this.fb.group({
+    prenom: ['', Validators.required],
+    nom: ['', Validators.required],
+    email: ['', Validators.email],
+    tel: ['', Validators.required],
+    price: ['20000']
+  });
 
-  constructor() { }
+  payementForm30 = this.fb.group({
+    prenom: ['', Validators.required],
+    nom: ['', Validators.required],
+    email: ['', Validators.email],
+    tel: ['', Validators.required],
+    price: ['30000']
+  });
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   // this.loadScripts();
   }
+
+  onSubmit(){
+    console.warn(this.payementForm20.value);
+  }
+  onSubmit30(){
+    console.warn(this.payementForm30.value);
+  }
+
 
   loadScripts() {
     const dynamicScripts = [
@@ -44,4 +68,5 @@ export class HomeComponent implements OnInit {
       document.getElementsByTagName('head')[0].appendChild(node);
     }
   }
+ 
 }
