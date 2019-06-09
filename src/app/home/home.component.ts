@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { PaiementService } from '../paiement.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
     tel: ['', Validators.required],
     price: ['30000']
   });
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private paiementService: PaiementService) { }
 
   ngOnInit() {
   // this.loadScripts();
@@ -31,6 +32,25 @@ export class HomeComponent implements OnInit {
 
   onSubmit(){
     console.warn(this.payementForm20.value);
+    let data  = new paiement();
+    data.nom = this.payementForm20.value.nom;
+    data.prenom = this.payementForm20.value.prenom;
+    data.tel = this.payementForm20.value.tel;
+    data.price = this.payementForm20.value.price;
+    data.email = this.payementForm20.value.email;
+
+    this.paiementService.makeAPayement(data).subscribe(
+      (complete)=>{
+        console.log(complete);
+        let token = complete.message.token;
+        this.paiementService.terminatePayement(token).subscribe(
+          (terminate)=>{
+            console.log(terminate);
+          }
+        )
+      }
+    );
+
   }
   onSubmit30(){
     console.warn(this.payementForm30.value);
@@ -69,4 +89,13 @@ export class HomeComponent implements OnInit {
     }
   }
  
+}
+
+
+export class paiement{
+  nom;
+  prenom;
+  email;
+  tel;
+  price;
 }

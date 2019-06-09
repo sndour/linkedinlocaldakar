@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { PaiementService } from './paiement.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent}
@@ -22,10 +24,11 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [PaiementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

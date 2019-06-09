@@ -6,18 +6,18 @@ const app = express();
 
 // Heroku automagically gives us SSL
 // Lets write some middleware to redirect us
-// let env = process.env.NODE_ENV || 'development';
+let env = process.env.NODE_ENV || 'development';
 
-// let forceSSL = (req, res, next) => {
-//   if (req.headers['x-forwarded-proto'] !== 'https') {
-//     return res.redirect(['https://', req.get('Host'), req.url].join(''));
-//   }
-//   return next();
-// };
+let forceSSL = (req, res, next) => {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect(['https://', req.get('Host'), req.url].join(''));
+  }
+  return next();
+};
 
-// if (env === 'production') {
-//   app.use(forceSSL);
-// }
+if (env === 'production') {
+  app.use(forceSSL);
+}
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/linkedinlocaldakar'));
