@@ -15,9 +15,9 @@ export class PaiementService {
    return this.http.post(this.url_base + 'payit', data, {headers:options});
   }
 
-  terminatePayement(token){
+  terminatePayement(content){
     let options = this.createRequestOptions();
-    return this.http.get('https://preview.payexpresse.com/payment/checkout/'+token, {headers:options});
+    return this.http.get('https://preview.payexpresse.com/payment/checkout/'+content.message.token, {headers:options});
   }
 
 

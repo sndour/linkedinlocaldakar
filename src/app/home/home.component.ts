@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
         console.log(complete);
         let content = complete;
         console.log(content);
-        this.paiementService.terminatePayement(content.message.token).subscribe(
+        this.paiementService.terminatePayement(content).subscribe(
           (terminate)=>{
             console.log(terminate);
           }
