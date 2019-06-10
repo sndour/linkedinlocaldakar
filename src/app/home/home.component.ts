@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   // this.loadScripts();
-  
+
   }
 
   onSubmit(){
@@ -43,8 +43,9 @@ export class HomeComponent implements OnInit {
     this.paiementService.makeAPayement(data).subscribe(
       (complete)=>{
         console.log(complete);
-        let token = complete.message.token;
-        this.paiementService.terminatePayement(token).subscribe(
+        let content = complete;
+        console.log(content);
+        this.paiementService.terminatePayement(content.message.token).subscribe(
           (terminate)=>{
             console.log(terminate);
           }
