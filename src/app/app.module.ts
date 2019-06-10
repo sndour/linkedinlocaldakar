@@ -8,9 +8,11 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { PaiementService } from './paiement.service';
+import { SponsorsContactComponent } from './sponsors-contact/sponsors-contact.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent}
+  { path: '', component: HomeComponent},
+  { path: 'sponsors', component: SponsorsContactComponent}
 ]
 
 
@@ -19,7 +21,8 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SponsorsContactComponent
   ],
   imports: [
     BrowserModule,
