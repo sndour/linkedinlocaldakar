@@ -45,16 +45,15 @@ export class HomeComponent implements OnInit {
         console.log(complete);
         let content = complete;
         console.log(content);
-        let brams = new getToken();
-        brams.content = content;
-        brams.tokenize();
-        window.open('https://preview.payexpresse.com/payment/checkout/'+brams.token, 'winname', 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400,height=350');
-        // this.paiementService.terminatePayement(content).subscribe(
-        //   (terminate)=>{
-        //     console.log(terminate);
-            
-        //   }
-        // )
+        // let brams = new getToken();
+        // brams.content = 
+        
+        this.paiementService.terminatePayement(content).subscribe(
+          (terminate)=>{
+            console.log(terminate);
+            window.open('https://preview.payexpresse.com/payment/checkout/'+terminate, 'winname', 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400,height=350');
+          }
+        )
       }
     );
 

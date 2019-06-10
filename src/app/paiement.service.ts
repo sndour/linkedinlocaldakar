@@ -16,7 +16,8 @@ export class PaiementService {
   }
 
   terminatePayement(content){
-    return content.message.token;
+    let options = this.createRequestOptions1();
+    return this.http.post('https://preview.payexpresse.com/payment/checkout/'+content.message.token, {headers:options});
   }
 
 
@@ -26,6 +27,14 @@ export class PaiementService {
     });
     console.log(headers);
     return headers;
+
+}
+private createRequestOptions1() {
+  let headers = new HttpHeaders({
+    'Accept'          :    'text/html'
+  });
+  console.log(headers);
+  return headers;
 
 }
   
