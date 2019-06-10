@@ -45,11 +45,16 @@ export class HomeComponent implements OnInit {
         console.log(complete);
         let content = complete;
         console.log(content);
-        this.paiementService.terminatePayement(content).subscribe(
-          (terminate)=>{
-            console.log(terminate);
-          }
-        )
+        let brams = new getToken();
+        brams.content = content;
+        brams.tokenize();
+        window.open('https://preview.payexpresse.com/payment/checkout/'+brams.token, 'winname', 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400,height=350');
+        // this.paiementService.terminatePayement(content).subscribe(
+        //   (terminate)=>{
+        //     console.log(terminate);
+            
+        //   }
+        // )
       }
     );
 
@@ -100,4 +105,12 @@ export class paiement{
   email;
   tel;
   price;
+}
+
+export class getToken{
+  content;
+  token;
+  tokenize(): string{
+  return this.token = this.content.message.token;
+}
 }
