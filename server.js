@@ -1,7 +1,6 @@
 //Install express server
 const express = require('express');
 const path = require('path'); 
-var enforce = require('express-sslify');
 
 const app = express();
 
@@ -19,7 +18,6 @@ const app = express();
 // if (env === 'production') {
 //   app.use(forceSSL);
 // }
- app.use(enforce.HTTPS({ trustProtoHeader: true }));
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/linkedinlocaldakar'));
 

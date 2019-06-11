@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PaiementService {
-  url_base ="https://backend-linkedin-local-dakar.herokuapp.com/"
+  url_base ="https://backend-linkedin-local-dakar.herokuapp.com/api"
 
 
   constructor(private http: HttpClient) { }
