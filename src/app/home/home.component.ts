@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { PaiementService } from '../paiement.service';
+//import * as PayExpresse from 'src/assets/js/payexpresse';
 
 @Component({
   selector: 'app-home',
@@ -45,18 +46,22 @@ export class HomeComponent implements OnInit {
         console.log(complete);
         let content = complete;
         console.log(content);
-        // let brams = new getToken();
-        // brams.content = 
+         let brams = new getUrl();
+         brams.content = content;
+         brams.tokenize();
+         console.log('url',brams.url);
+        window.location.assign(brams.url);
+       
         
-        this.paiementService.terminatePayement(content).subscribe(
-          (terminate)=>{
-            console.log(terminate);
-            window.open('https://preview.payexpresse.com/payment/checkout/'+terminate, 'winname', 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400,height=350');
-          }
-        )
+        // this.paiementService.terminatePayement(content).subscribe(
+        //   (terminate)=>{
+        //     console.log(terminate);
+        //     window.open('https://preview.payexpresse.com/payment/checkout/'+terminate, 'winname', 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400,height=350');
+        //   }
+        // )
       }
     );
-
+    
   }
   onSubmit30(){
     console.warn(this.payementForm30.value);
@@ -106,10 +111,10 @@ export class paiement{
   price;
 }
 
-export class getToken{
+export class getUrl{
   content;
-  token;
+  url;
   tokenize(): string{
-  return this.token = this.content.message.token;
+  return this.url = this.content.jsonResponse.redirect_url;
 }
 }
