@@ -29,14 +29,19 @@
                         
                         
   function buy(btn) {
+    let brams = $('#offer_id').val();
+    let myName = $("#nom").val();
+      console.log(brams);
+      console.log(myName);
       var selector = $(btn);
 
       (new PayExpresse({
+         
           offer_id          :   $('#offer_id').val(),
           nom               :   $('#nom').val(),
           prenom            :   $('#prenom').val(),
           email             :   $('#email').val(),
-          tel               :   $('#tel').val()
+          tel               :   $('#tel').val(),
       })).withOption({
           requestTokenUrl           :   'https://backend-linkedin-local-dakar.herokuapp.com/api/payit',
           method              :   'POST',
