@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
          brams.content = content;
          brams.tokenize();
          console.log('url',brams.url);
-       window.open(brams.url);
+         window.open(brams.url,"Payexpresse","location=yes,resizable=yes,scrollbars=yes,status=yes");
       //  this.paiementService.terminatePayement(brams.url).subscribe(
       //    (content)=>{
       //      console.log('le contenu de la requete', content);
