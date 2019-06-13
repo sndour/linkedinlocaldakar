@@ -16,8 +16,11 @@ export class PaiementService {
   }
 
   terminatePayement(content){
-    let options = this.createRequestOptions1();
-    return this.http.post('https://preview.payexpresse.com/payment/checkout/'+content.message.token, {headers:options});
+    let data = {"checkoutUrl": content};
+    let datum = JSON.stringify(data);
+    console.log('on affiche datum', datum);
+    let options = this.createRequestOptions();
+    return this.http.post(this.url_base+ 'checkout', datum, {headers:options}) ;
   }
 
 

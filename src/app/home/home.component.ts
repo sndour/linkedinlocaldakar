@@ -50,7 +50,12 @@ export class HomeComponent implements OnInit {
          brams.content = content;
          brams.tokenize();
          console.log('url',brams.url);
-        window.open(brams.url).focus();
+       window.open(brams.url);
+      //  this.paiementService.terminatePayement(brams.url).subscribe(
+      //    (content)=>{
+      //      console.log('le contenu de la requete', content);
+      //    }
+      //  );
        
         
         // this.paiementService.terminatePayement(content).subscribe(
