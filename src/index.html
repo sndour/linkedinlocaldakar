@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <title>Linkedinlocaldakar</title>
   <base href="/">
-
+  <link rel="stylesheet" href="https://cdn.payexpresse.com/v1/payexpresse.min.css">
+  <script
+          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.payexpresse.com/v1/payexpresse.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -20,7 +25,75 @@
   <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
+<script>
+                        
+                        
+  function buy(btn) {
+      var selector = $(btn);
 
+      (new PayExpresse({
+          offer_id          :   $('#offer_id').val(),
+          nom               :   $('#nom').val(),
+          prenom            :   $('#prenom').val(),
+          email             :   $('#email').val(),
+          tel               :   $('#tel').val()
+      })).withOption({
+          requestTokenUrl           :   'https://backend-linkedin-local-dakar.herokuapp.com/api/payit',
+          method              :   'POST',
+          headers             :   {
+              "Accept"          :    "text/html"
+          },
+          prensentationMode   :   PayExpresse.OPEN_IN_POPUP,
+          didPopupClosed: function (is_completed, success_url, cancel_url) {
+              window.location.href = is_completed === true ? success_url  : cancel_url;
+          },
+          willGetToken        :   function () {
+              console.log("Je me prepare a obtenir un token");
+              selector.prop('disabled', true);
+          },
+          didGetToken         : function (token, redirectUrl) {
+              console.log("Mon token est : " +  token  + ' et url est ' + redirectUrl );
+              selector.prop('disabled', false);
+          },
+          didReceiveError: function (error) {
+              alert('erreur inconnu', error.toString());
+              selector.prop('disabled', false);
+          },
+          didReceiveNonSuccessResponse: function (jsonResponse) {
+              console.log('non success response ',jsonResponse);
+              alert(jsonResponse.errors);
+              selector.prop('disabled', false);
+          }
+      }).send({
+                    pageBackgroundRadianStart:'#0178bc',
+                    pageBackgroundRadianEnd:'#00bdda',
+                    pageTextPrimaryColor:'#333',
+                    paymentFormBackground:'#fff',
+                    navControlNextBackgroundRadianStart:'#608d93',
+                    navControlNextBackgroundRadianEnd:'#28314e',
+                    navControlCancelBackgroundRadianStar:'#28314e',
+                    navControlCancelBackgroundRadianEnd:'#608d93',
+                    navControlTextColor:'#fff',
+                    paymentListItemTextColor:'#555',
+                    paymentListItemSelectedBackground:'#eee',
+                    commingIconBackgroundRadianStart:'#0178bc',
+                    commingIconBackgroundRadianEnd:'#00bdda',
+                    commingIconTextColor:'#fff',
+                    formInputBackgroundColor:'#eff1f2',
+                    formInputBorderTopColor:'#e3e7eb',
+                    formInputBorderLeftColor:'#7c7c7c',
+                    totalIconBackgroundRadianStart:'#0178bc',
+                    totalIconBackgroundRadianEnd:'#00bdda',
+                    formLabelTextColor:'#292b2c',
+                    alertDialogTextColor:'#333',
+                    alertDialogConfirmButtonBackgroundColor:'#0178bc',
+                    alertDialogConfirmButtonTextColor:'#fff'
+                });
+            
+
+      //.send params are optional
+  }
+</script>
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>

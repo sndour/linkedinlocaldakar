@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { PaiementService } from '../paiement.service';
-//import * as PayExpresse from 'src/assets/js/payexpresse';
+import { PayExpresse } from 'src/assets/js/payexpresse.min';
 
 @Component({
   selector: 'app-home',
@@ -10,21 +10,21 @@ import { PaiementService } from '../paiement.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  payementForm20 = this.fb.group({
-    prenom: ['', Validators.required],
-    nom: ['', Validators.required],
-    email: ['', Validators.email],
-    tel: ['', Validators.required],
-    price: ['20000']
-  });
+  // payementForm20 = this.fb.group({
+  //   prenom: ['', Validators.required],
+  //   nom: ['', Validators.required],
+  //   email: ['', Validators.email],
+  //   tel: ['', Validators.required],
+  //   price: ['20000']
+  // });
 
-  payementForm30 = this.fb.group({
-    prenom: ['', Validators.required],
-    nom: ['', Validators.required],
-    email: ['', Validators.email],
-    tel: ['', Validators.required],
-    price: ['30000']
-  });
+  // payementForm30 = this.fb.group({
+  //   prenom: ['', Validators.required],
+  //   nom: ['', Validators.required],
+  //   email: ['', Validators.email],
+  //   tel: ['', Validators.required],
+  //   price: ['30000']
+  // });
   constructor(private fb: FormBuilder, private paiementService: PaiementService) { }
 
   ngOnInit() {
@@ -33,24 +33,25 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(){
-    console.warn(this.payementForm20.value);
-    let data  = new paiement();
-    data.nom = this.payementForm20.value.nom;
-    data.prenom = this.payementForm20.value.prenom;
-    data.tel = this.payementForm20.value.tel;
-    data.price = this.payementForm20.value.price;
-    data.email = this.payementForm20.value.email;
+    // console.warn(this.payementForm20.value);
+    // let data  = new paiement();
+    // data.nom = this.payementForm20.value.nom;
+    // data.prenom = this.payementForm20.value.prenom;
+    // data.tel = this.payementForm20.value.tel;
+    // data.price = this.payementForm20.value.price;
+    // data.email = this.payementForm20.value.email;
 
-    this.paiementService.makeAPayement(data).subscribe(
-      (complete)=>{
-        console.log(complete);
-        let content = complete;
-        console.log(content);
-         let brams = new getUrl();
-         brams.content = content;
-         brams.tokenize();
-         console.log('url',brams.url);
-         window.open(brams.url,"Payexpresse","location=yes,resizable=yes,scrollbars=yes,status=yes");
+   //this.doRequest(data);
+    // this.paiementService.makeAPayement(data).subscribe(
+    //   (complete)=>{
+    //     console.log(complete);
+    //     let content = complete;
+    //     console.log(content);
+    //      let brams = new getUrl();
+    //      brams.content = content;
+    //      brams.tokenize();
+    //      console.log('url',brams.url);
+    //      window.open(brams.url,"Payexpresse","location=yes,resizable=yes,scrollbars=yes,status=yes");
       //  this.paiementService.terminatePayement(brams.url).subscribe(
       //    (content)=>{
       //      console.log('le contenu de la requete', content);
@@ -64,12 +65,40 @@ export class HomeComponent implements OnInit {
         //     window.open('https://preview.payexpresse.com/payment/checkout/'+terminate, 'winname', 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400,height=350');
         //   }
         // )
-      }
-    );
+      
+    
     
   }
+
+  // doRequest(data) {
+
+  //   (new PayExpresse(data)).withOption({
+  //   requestTokenUrl           :   'https://backend-linkedin-local-dakar.herokuapp.com/api/payit',
+  //   method              :   'POST',
+  //   headers             :   {
+  //   "Accept"          :    "text/html"
+  //   },
+  //   prensentationMode   :   PayExpresse.OPEN_IN_POPUP,
+  //   didPopupClosed:  (is_completed, success_url, cancel_url) => {
+    
+  //   },
+  //   willGetToken        :    () => {
+  //   console.log("Je me prepare a obtenir un token");
+  //   },
+  //   didGetToken         : (token, redirectUrl) => {
+  //   console.log("Mon token est : " +  token  + ' et url est ' + redirectUrl );
+    
+  //   },
+  //   didReceiveError: function (error) {
+  //   console.log(error)
+  //   },
+  //   didReceiveNonSuccessResponse: function (jsonResponse) {
+  //   console.log('non success response ',jsonResponse);
+  //   }
+  //   }).send();
+  //   }
+    
   onSubmit30(){
-    console.warn(this.payementForm30.value);
   }
 
 

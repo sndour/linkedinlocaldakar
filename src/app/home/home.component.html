@@ -948,25 +948,32 @@
         <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">  <span aria-hidden="true">&times;</span>
                 </button>
-                <form [formGroup]="payementForm20" (ngSubmit)="onSubmit()">
+                <form >
                         <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Nom:</label>
-                          <input type="text" class="form-control" id="recipient-name" required formControlName="nom" placeholder="Entrez votre nom">
+                          <input type="text" class="form-control" id="nom" required  placeholder="Entrez votre nom">
                         </div>
                         <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Prénom:</label>
-                                <input type="text" class="form-control" required formControlName="prenom" id="recipient-name" placeholder="Entrez votre prénom">
+                                <input type="text" class="form-control" required  id="prenom" placeholder="Entrez votre prénom">
                         </div>
                         <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Email:</label>
-                                <input type="email" class="form-control" formControlName="email" id="recipient-prenom" placeholder="example@exemple.com">
+                                <input type="email" class="form-control"  id="email" placeholder="example@exemple.com">
                         </div>
                         <div class="form-group">
                                  <label for="recipient-name" class="col-form-label">Numéro de telephone:</label>
-                                 <input type="text" class="form-control" formControlName="tel" id="recipient-name" placeholder="221xxxxxxxxx">
+                                 <input type="text" class="form-control"  id="tel" placeholder="221xxxxxxxxx">
                         </div>
+
+                        <div class="form-group">
+                            
+                            <input id="offer_id" name="prodId" type="hidden" value="1">
+                        </div>
+
+                       
                         
-                       <button class="theme-btn btn-style-one" type="submit" [disabled]="!payementForm20.valid">Payer sa place pour LinkedIn Local Dakar</button>
+                       <button class="theme-btn btn-style-one" class="buy" onclick="buy(this)" >Payer sa place pour LinkedIn Local Dakar</button>
                       </form><br/>
                
           <!-- ... <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -984,30 +991,32 @@
             <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">  <span aria-hidden="true">&times;</span>
                     </button>
-                    <form [formGroup]="payementForm30" (ngSubmit)="onSubmit30()">
+                    <form>
                             <div class="form-group">
                               <label for="recipient-name" class="col-form-label">Nom:</label>
-                              <input type="text" class="form-control" id="recipient-name" required formControlName="nom" placeholder="Entrez votre nom">
+                              <input type="text" class="form-control" id="nom" required  placeholder="Entrez votre nom">
                             </div>
                             <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Prénom:</label>
-                                    <input type="text" class="form-control" required formControlName="prenom" id="recipient-name" placeholder="Entrez votre prénom">
+                                    <input type="text" class="form-control" required id="prenom" placeholder="Entrez votre prénom">
                             </div>
                             <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Email:</label>
-                                    <input type="email" class="form-control" formControlName="email" id="recipient-prenom" placeholder="example@exemple.com">
+                                    <input type="email" class="form-control"  id="email" placeholder="example@exemple.com">
                             </div>
                             <div class="form-group">
                                      <label for="recipient-name" class="col-form-label">Numéro de telephone:</label>
-                                     <input type="text" class="form-control" formControlName="tel" id="recipient-name" placeholder="221xxxxxxxxx">
+                                     <input type="text" class="form-control"  id="tel" placeholder="221xxxxxxxxx">
                             </div>
+                            <div class="form-group">
                             
-                           <button class="theme-btn btn-style-one" type="submit" [disabled]="!payementForm30.valid">Payer sa place pour LinkedIn Local Dakar</button>
+                                <input id="offer_id" name="prodId" type="hidden" value="2">
+                            </div>
+    
+                           <button class="theme-btn btn-style-one" class="buy" onclick="buy(this)" >Payer sa place pour LinkedIn Local Dakar</button>
                           </form><br/>
-                   
-              <!-- ... <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Payer</button> -->
-            </div>
+
+            </div> 
            
           </div>
         </div>
