@@ -29,20 +29,22 @@
                         
                         
   function buy(btn) {
-    let brams = $('#offer_id').val();
-    let myName = $("#nom").val();
-      console.log(brams);
-      console.log(myName);
+    let offer_id = $('#offer_id').val();
+    let nom = $("#nom").val();
+    let prenom = $('#prenom').val();
+    let email = $("#email").val();
+    let tel = $("#tel").val();
+
+    let data= {
+      "nom": nom,
+      "prenom": prenom,
+      "email": email,
+      "tel": tel,
+      "offer_id":offer_id
+    }
       var selector = $(btn);
 
-      (new PayExpresse({
-         
-          offer_id          :   $('#offer_id').val(),
-          nom               :   $('#nom').val(),
-          prenom            :   $('#prenom').val(),
-          email             :   $('#email').val(),
-          tel               :   $('#tel').val(),
-      })).withOption({
+      (new PayExpresse(data).withOption({
           requestTokenUrl           :   'https://backend-linkedin-local-dakar.herokuapp.com/api/payit',
           method              :   'POST',
           headers             :   {
