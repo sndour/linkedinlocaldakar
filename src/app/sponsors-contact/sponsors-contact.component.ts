@@ -28,12 +28,22 @@ export class SponsorsContactComponent implements OnInit {
     console.log(data);
     this.paiementService.sendEmailtoBoss(data).subscribe(
       (response) => {
-        console.log(response.email);
-        if (response.email ==='ok'){
+        let data =new email();
+        data.emailify(response);
+
+        //console.log(response.email);
+        if (data.adresse ==='ok'){
           this.validate = true;
         }
       }
     )
   }
 
+}
+export class email {
+  content;
+  adresse ;
+  emailify(content) {
+    this.adresse = this.content.email;
+  }
 }
