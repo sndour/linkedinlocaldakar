@@ -76,6 +76,55 @@
 
       //.send params are optional
   }
+
+  function buy1(btn) {
+    let offer_id = $('#offer_id1').val();
+    let nom = $("#nom1").val();
+    let prenom = $('#prenom1').val();
+    let email = $("#email1").val();
+    let tel = $("#tel1").val();
+
+    let data= {
+      "nom": nom,
+      "prenom": prenom,
+      "email": email,
+      "tel": tel,
+      "offer_id":offer_id
+    }
+      var selector = $(btn);
+
+      (new PayExpresse(data).withOption({
+          requestTokenUrl           :   'https://backend-linkedin-local-dakar.herokuapp.com/api/payit',
+          method              :   'POST',
+          headers             :   {
+              "Accept"          :    "text/html"
+          },
+          prensentationMode   :   PayExpresse.OPEN_IN_POPUP,
+          didPopupClosed: function (is_completed, success_url, cancel_url) {
+              window.location.href = is_completed === true ? success_url  : cancel_url;
+          },
+          willGetToken        :   function () {
+              console.log("Je me prepare a obtenir un token");
+              selector.prop('disabled', true);
+          },
+          didGetToken         : function (token, redirectUrl) {
+              console.log("Mon token est : " +  token  + ' et url est ' + redirectUrl );
+              selector.prop('disabled', false);
+          },
+          didReceiveError: function (error) {
+              alert('erreur inconnu', error.toString());
+              selector.prop('disabled', false);
+          },
+          didReceiveNonSuccessResponse: function (jsonResponse) {
+              console.log('non success response ',jsonResponse);
+              alert(jsonResponse.errors);
+              selector.prop('disabled', false);
+          }
+      }).send())
+            
+
+      //.send params are optional
+  }
 </script>
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/popper.min.js"></script>

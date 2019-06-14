@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   //   price: ['20000']
   // });
 
+  emailNewsLetter = new FormControl('', [Validators.email]);
+  value='';
   // payementForm30 = this.fb.group({
   //   prenom: ['', Validators.required],
   //   nom: ['', Validators.required],
@@ -99,6 +101,10 @@ export class HomeComponent implements OnInit {
   //   }
     
   onSubmit30(){
+  }
+
+  onSubscribe(){
+
   }
 
 

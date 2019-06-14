@@ -55,31 +55,35 @@
               </div>
           </div>
           <div class="col-xl-6 col-md-12 col-sm-12">
-              <form class="default-form contact-area" method="post" action="sendemail.php" id="contact-form">
+              <form [formGroup]="sendEmail" (ngSubmit)="sendEmailtoUs(sendEmail.value)"class="default-form contact-area" method="post" action="sendemail.php" id="contact-form">
                   <div class="row">
                       <div class="col-md-6 col-sm-12 col-xs-12">
                           <div class="form-group">
-                              <input type="text" name="username" placeholder="Nom" required="">
+                              <input type="text" formControlName="nom" name="username" placeholder="Nom" required="">
                           </div>
                           <div class="form-group">
-                              <input type="text" name="subject" placeholder="Sujet" required="">
+                              <input type="text" formControlName="sujet" name="subject" placeholder="Sujet" required="">
                           </div>                                  
                       </div>
                       <div class="col-md-6 col-sm-12 col-xs-12">
                           <div class="form-group">
-                              <input type="email" name="email" placeholder="Email" required="">
+                              <input type="email" formControlName="email" name="email" placeholder="Email" required="">
                           </div>
                           <div class="form-group">
-                              <input type="text" name="phone" placeholder="Votre Site Web" required="">
+                              <input type="text" formControlName="site" name="phone" placeholder="Votre Site Web" >
                           </div>                                 
                       </div>
                       <div class="col-md-12 col-sm-12 col-xs-12">
                           <div class="form-group">
-                              <textarea name="message" class="form-control textarea required" placeholder="Votre Message"></textarea>
+                              <textarea name="message" formControlName="message" class="form-control textarea required" placeholder="Votre Message"></textarea>
                           </div>
                           <div class="form-group bottom">
-                              <button type="submit" class="theme-btn btn-style-one">Envoyer le message</button>
+                              <button type="submit"  class="theme-btn btn-style-one">Envoyer le message</button>
                           </div>
+
+                          <h5 *ngIf="validate" style="color: green;">
+                Email bien envoyé
+              </h5>
                       </div>
                   </div>
               </form>

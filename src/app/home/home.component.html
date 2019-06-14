@@ -889,8 +889,9 @@
       </div>
       <form method="post" action="contact.html">
           <div class="form-group">
-              <input type="email" name="email" value="" placeholder="Votre Adresse Email" required="">
-              <button type="submit" class="theme-btn btn-style-two">S'inscrire</button>
+              <input type="email" name="email" value="" [formControl]="emailNewsLetter" placeholder="Votre Adresse Email" required="">
+              <button type="submit" class="theme-btn btn-style-two" (click)="onSubscribe()" *ngIf="!emailNewsLetter.errors.email" [disabled]>S'inscrire</button>
+              
           </div>
       </form>
   </div>
@@ -973,7 +974,7 @@
 
                        
                         
-                       <button class="theme-btn btn-style-one" class="buy"  onclick="buy(this)" >Payer sa place pour LinkedIn Local Dakar</button>
+                       <button class="theme-btn btn-style-one"   onclick="buy(this)" >Payer sa place pour LinkedIn Local Dakar</button>
                       </form><br/>
                
           <!-- ... <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -994,26 +995,26 @@
                     <form>
                             <div class="form-group">
                               <label for="recipient-name" class="col-form-label">Nom:</label>
-                              <input type="text" class="form-control" id="nom" required  placeholder="Entrez votre nom">
+                              <input type="text" class="form-control" id="nom1" required  placeholder="Entrez votre nom">
                             </div>
                             <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Prénom:</label>
-                                    <input type="text" class="form-control" required id="prenom" placeholder="Entrez votre prénom">
+                                    <input type="text" class="form-control" required id="prenom1" placeholder="Entrez votre prénom">
                             </div>
                             <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Email:</label>
-                                    <input type="email" class="form-control"  id="email" placeholder="example@exemple.com">
+                                    <input type="email" class="form-control"  id="email1" placeholder="example@exemple.com">
                             </div>
                             <div class="form-group">
                                      <label for="recipient-name" class="col-form-label">Numéro de telephone:</label>
-                                     <input type="text" class="form-control"  id="tel" placeholder="221xxxxxxxxx">
+                                     <input type="text" class="form-control"  id="tel1" placeholder="221xxxxxxxxx">
                             </div>
                             <div class="form-group">
                             
-                                <input id="offer_id"  type="hidden" value="2">
+                                <input id="offer_id1"  type="hidden" value="2">
                             </div>
     
-                           <button class="theme-btn btn-style-one" class="buy" onclick="buy(this)" >Payer sa place pour LinkedIn Local Dakar</button>
+                           <button class="theme-btn btn-style-one" onclick="buy1(this)" >Payer sa place pour LinkedIn Local Dakar</button>
                           </form><br/>
 
             </div> 

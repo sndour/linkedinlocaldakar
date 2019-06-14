@@ -3470,7 +3470,7 @@ select:focus {
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus{
-  border-color: #fa334f;
+  border-color: #2556a6;
 }
 .contact-form textarea{
   height: 95px;
@@ -4372,7 +4372,7 @@ select:focus {
 .post-comment input:focus,
 .post-comment select:focus,
 .post-comment textarea:focus{
-  border-color: #fa334f;
+  border-color: #2556a6;
 }
 .post-comment textarea{
   height: 95px;
@@ -4478,7 +4478,7 @@ select:focus {
 .contact-area input:focus,
 .contact-area select:focus,
 .contact-area textarea:focus{
-  border-color: #fa334f;
+  border-color: #2556a6;
   box-shadow:  none;
 }
 .contact-area textarea{

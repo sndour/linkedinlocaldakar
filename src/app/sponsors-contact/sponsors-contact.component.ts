@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder , Validators} from '@angular/forms';
+import { PaiementService } from '../paiement.service';
 
 @Component({
   selector: 'app-sponsors-contact',
@@ -6,12 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sponsors-contact.component.css']
 })
 export class SponsorsContactComponent implements OnInit {
+  sendEmail = this.se.group({
+    nom: ['', Validators.required],
+    email: ['', Validators.required],
+    sujet: ['', Validators.email],
+    site: ['',Validators.maxLength(100)],
+    message: ['', Validators.required]
+     });
 
-  constructor() { }
+     validate;
+  constructor(private se: FormBuilder, private paiementService:PaiementService) { }
 
   ngOnInit() {
-
+    this.validate = false;
     window.scrollTo(0, 0);
+  }
+
+  sendEmailtoUs (data){
+    console.log(data);
+    this.paiementService.sendEmailtoBoss(data).subscribe(
+      (response) => {
+        console.log(response.email);
+        if (response.email ==='ok'){
+          this.validate = true;
+        }
+      }
+    )
   }
 
 }

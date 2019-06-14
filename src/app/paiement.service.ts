@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class PaiementService {
   url_base ="https://backend-linkedin-local-dakar.herokuapp.com/api/"
-
+  url_base2 = "https://backend-linkedin-local-dakar.herokuapp.com/api/"
 
   constructor(private http: HttpClient) { }
 
@@ -23,6 +23,13 @@ export class PaiementService {
     return this.http.post(this.url_base+ 'checkout', datum, {headers:options}) ;
   }
 
+  saveSubscriber(){
+
+  }
+  sendEmailtoBoss(data){
+      let options = this.createRequestOptions();
+      return this.http.post(this.url_base+ 'email', data, {headers:options})
+  }
 
   private createRequestOptions() {
     let headers = new HttpHeaders({
