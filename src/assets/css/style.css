@@ -3495,8 +3495,8 @@ select:focus {
   color:#ff0000;
   font-weight:500;  
 }
-.map-outer .map-canvas{
-  height:570px;
+.map-outer #map{
+  height:180px;
   max-width: none;
   width: 200%;
   float: right;
@@ -4440,9 +4440,9 @@ select:focus {
 .contact-map {
   position: relative;
 }
-.contact-map .map-canvas {
+.contact-map #map {
   width: 100%;
-  height: 650px;
+  height: 250px;
   float: none;
   margin-right: 0px;
 }

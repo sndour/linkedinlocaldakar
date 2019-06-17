@@ -20,6 +20,11 @@ export class HomeComponent implements OnInit {
 
   emailNewsLetter = new FormControl('', [Validators.email]);
   value='';
+  timerid;
+  days;
+  hours;
+  mins;
+  secs;
   // payementForm30 = this.fb.group({
   //   prenom: ['', Validators.required],
   //   nom: ['', Validators.required],
@@ -31,7 +36,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   // this.loadScripts();
-
+    this.timer();
+    this.loadScriptsBody();
   }
 
   onSubmit(){
@@ -139,6 +145,57 @@ export class HomeComponent implements OnInit {
       document.getElementsByTagName('head')[0].appendChild(node);
     }
   }
+
+
+  loadScriptsBody(){
+    const dynamicScripts = [
+      'assets/js/map.js',
+      'assets/js/mapbox.js'
+    ];
+    for (let i = 0; i < dynamicScripts.length; i++) {
+      const node = document.createElement('script');
+      node.src = dynamicScripts[i];
+      node.type = 'text/javascript';
+      node.async = false;
+      node.charset = 'utf-8';
+      document.getElementsByTagName('head')[0].appendChild(node);
+    }
+  }
+  timer() {
+    //console.log(date);
+    // this.timerid = new Date(date).getTime();
+    this.timerid = new Date("2019-07-06T09:00:00").getTime();
+    console.log ( this.timerid);
+
+    setInterval(() => {
+
+        let now = new Date().getTime();
+        console.log('date de l\'event' + this.timerid);
+        console.log('date du moment' +now);
+
+        let t = this.timerid - now;
+
+        if (t >= 0) {
+
+            this.days = Math.floor(t / (1000 * 60 * 60 * 24));
+            this.hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            this.mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+            this.secs = Math.floor((t % (1000 * 60)) / 1000);
+
+            console.log(this.days);
+            console.log(this.hours);
+            console.log(this.mins);
+            console.log(this.secs);
+
+        } else {
+            console.log(t);
+        }
+    }, 1000);
+
+
+    //this.time = this.timerService.timer(new Date(date));
+   //console.log(this.time);
+}
  
 }
 

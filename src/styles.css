@@ -10,3 +10,7 @@
 @import  "assets/css/responsive.css";
 @import  "assets/css/style.css";
 @import  "assets/css/payexpresse.min.css";
+
+
+@import url("https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css");
+@import url("https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css");

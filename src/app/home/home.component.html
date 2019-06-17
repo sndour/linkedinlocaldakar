@@ -7,7 +7,7 @@
               <div class="about-image">
                   <figure>
                       <!-- <img src="assets/images/about/1.jpg" alt=""> -->
-                      <img src="assets/images/accueil.jpg" alt="">
+                      <img src="assets/images/accueil_linkedin_local_dakar.jpg" alt="">
                   </figure>
               </div>
           </div>
@@ -35,7 +35,16 @@
   </div>
 </section>
 <!--End About Section-->
-
+<!--Schedule Details-->
+<section class="contact-map">
+    <div class="container-fulid">
+        <div class="map-outer">
+            <!--Map Canvas-->
+            <div id="map"></div>
+        </div>               
+    </div>
+</section>
+<!--End Schedule Details-->
 <!--Fact Counter Area-->
 <section class="fact-counter-area" style="background-image:url(assets/images/linkedinlocaldakar_back1.jpg);">
   <div class="container">
@@ -364,7 +373,7 @@
                                     <!-- <figure>
                                         <img src="assets/images/resources/schedule-5.jpg" alt="">
                                     </figure> -->
-                                    <h6>Joël Pie William GBAGUIDI </h6>
+                                    <h6>Joël Pie William GBAGUIDI <br>Sarah Laure TCHALA  </h6>
                                 </td>
                                 <td class="time">
                                     <i class="far fa-clock"></i>
@@ -449,7 +458,7 @@
                                     <!-- <figure>
                                         <img src="assets/images/resources/schedule-5.jpg" alt="">
                                     </figure> -->
-                                    <h6></h6>
+                                    <h6>Pape SOW <br>Fréderic VALONY <br> Anta Babacar NGOM <br> Oulimata SARR </h6>
                                 </td>
                                 <td class="time">
                                     <i class="far fa-clock"></i>
@@ -738,13 +747,13 @@
 <section class="gallery-bottom">
   <div class="container clearfix">
       <div class="sec-title-three float-left">
-          <h2>
-            Entourez-vous de gens<br>
-            qui se synchronisent avec vous</h2>
+          <h2 style="font-size: 53px;">
+            
+            {{days}} Jours : {{ hours }} Heures : {{ mins }} Minutes : {{ secs }} Secondes </h2>
       </div>
-      <div class="link-btn float-right">
+      <!-- <div class="link-btn float-right">
           <a [routerLink]="['sponsors']" class="theme-btn btn-style-two">Devenez un Sponsors</a>
-      </div>
+      </div> -->
   </div>
 </section>
 <!--End Gallery Bottom-->

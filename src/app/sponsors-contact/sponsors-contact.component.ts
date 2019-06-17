@@ -28,9 +28,9 @@ export class SponsorsContactComponent implements OnInit {
     console.log(data);
     this.paiementService.sendEmailtoBoss(data).subscribe(
       (response) => {
-        let data =new email();
-        data.emailify(response);
-
+        let doc =new courriel ();
+        doc.emailify(response);
+        console.log(data.adresse);
         //console.log(response.email);
         if (data.adresse ==='ok'){
           this.validate = true;
@@ -40,7 +40,7 @@ export class SponsorsContactComponent implements OnInit {
   }
 
 }
-export class email {
+export class courriel {
   content;
   adresse ;
   emailify(content) {

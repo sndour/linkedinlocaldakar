@@ -90,7 +90,8 @@
               "src/assets/js/owl.js",
               "src/assets/js/poper.min.js",
               "src/assets/js/validate.js",
-              "src/assets/js/wow.js"
+              "src/assets/js/wow.js",
+              "src/assets/js/mapbox.js"
             ],
             "assets": [
               "src/favicon.ico",
