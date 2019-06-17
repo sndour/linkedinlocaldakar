@@ -182,10 +182,10 @@ export class HomeComponent implements OnInit {
             this.mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
             this.secs = Math.floor((t % (1000 * 60)) / 1000);
 
-            console.log(this.days);
-            console.log(this.hours);
-            console.log(this.mins);
-            console.log(this.secs);
+            // console.log(this.days);
+            // console.log(this.hours);
+            // console.log(this.mins);
+            // console.log(this.secs);
 
         } else {
             console.log(t);
