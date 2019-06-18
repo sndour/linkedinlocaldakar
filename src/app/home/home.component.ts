@@ -165,13 +165,12 @@ export class HomeComponent implements OnInit {
     //console.log(date);
     // this.timerid = new Date(date).getTime();
     this.timerid = new Date("2019-07-06T09:00:00").getTime();
-    console.log ( this.timerid);
+    
 
     setInterval(() => {
 
         let now = new Date().getTime();
-        console.log('date de l\'event' + this.timerid);
-        console.log('date du moment' +now);
+        
 
         let t = this.timerid - now;
 
