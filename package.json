@@ -2,8 +2,10 @@
   "name": "linkedinlocaldakar",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild": "ng build --prod && gzipper --verbose ./dist",
+    
+    "heroku-postbuild": "ng build --prod --aot",
     "ng": "ng",
+    "gzipper": "gzipper",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
