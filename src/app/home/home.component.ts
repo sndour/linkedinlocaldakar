@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { PaiementService } from '../paiement.service';
@@ -9,7 +9,7 @@ import { PayExpresse } from 'src/assets/js/payexpresse.min';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   // payementForm20 = this.fb.group({
   //   prenom: ['', Validators.required],
   //   nom: ['', Validators.required],
@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
 
   emailNewsLetter = new FormControl('', [Validators.email]);
   value='';
+  time;
   timerid;
   days;
   hours;
@@ -167,7 +168,7 @@ export class HomeComponent implements OnInit {
     this.timerid = new Date("2019-07-06T09:00:00").getTime();
     
 
-    setInterval(() => {
+    this.time = setInterval(() => {
 
         let now = new Date().getTime();
         
@@ -194,8 +195,14 @@ export class HomeComponent implements OnInit {
 
     //this.time = this.timerService.timer(new Date(date));
    //console.log(this.time);
+
+   
 }
- 
+ngOnDestroy(){
+  console.log('destroyed!!');
+  clearInterval(this.time);
+}
+
 }
 
 
