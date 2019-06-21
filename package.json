@@ -2,7 +2,7 @@
   "name": "linkedinlocaldakar",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild": "ng build --prod && gulp compressImage && gulp ompressSpeakers",
+    "heroku-postbuild": "ng build --prod && gulp compressImage && gulp compressSpeakers && compress",
     "ng": "ng",
     "gulp": "node_modules/gulp/node_modules/gulp-cli/bin/gulp.js",
     "start": "node server.js",

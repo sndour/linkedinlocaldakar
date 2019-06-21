@@ -22,12 +22,12 @@ gulp.task('compressSpeakers', function() {
         ]))
         .pipe(gulp.dest('./dist/linkedinlocaldakar/assets/images/speakers'));
 });
-// gulp.task('compress', function(done) {
-//   gulp.src(['./dist/**/*.*'])
-//       .pipe(gzip())
-//       .pipe(gulp.dest('./dist'));
-//       done();
-// });
+gulp.task('compress', function(done) {
+  gulp.src(['./dist/assets/js/*.*'])
+      .pipe(gzip())
+      .pipe(gulp.dest('./dist'));
+      done();
+});
 // gulp.task('compressImage', function(done) {
 //     gulp.src(['./src/assets/images/*'])
 //         .pipe(imagemin())
