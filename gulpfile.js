@@ -11,7 +11,7 @@ gulp.task('compressImage', function() {
                 quality: 20
             })
         ]))
-        .pipe(gulp.dest('./dist/assets/images'));
+        .pipe(gulp.dest('./dist/linkedinlocalDakar/assets/images'));
 });
 // gulp.task('compress', function(done) {
 //   gulp.src(['./dist/**/*.*'])
