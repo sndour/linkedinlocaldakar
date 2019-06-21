@@ -2,10 +2,9 @@
   "name": "linkedinlocaldakar",
   "version": "0.0.0",
   "scripts": {
-    
-    "heroku-postbuild": "ng build --prod --aot",
+    "heroku-postbuild": "ng build --prod && gulp compress",
     "ng": "ng",
-    "gzipper": "gzipper",
+    "gulp": "node_modules/gulp/node_modules/gulp-cli/bin/gulp.js",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
@@ -41,6 +40,8 @@
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
     "enhanced-resolve": "^3.3.0",
+    "gulp": "^4.0.2",
+    "gulp-gzip": "^1.4.2",
     "gzipper": "^2.8.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
