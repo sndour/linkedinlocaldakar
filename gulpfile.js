@@ -23,7 +23,7 @@ gulp.task('compressSpeakers', function() {
         .pipe(gulp.dest('./dist/linkedinlocaldakar/assets/images/speakers'));
 });
 gulp.task('compress', function(done) {
-  gulp.src(['./src/assets/js/*.*'])
+  gulp.src(['./dist/assets/js/*.*'])
       .pipe(gzip())
       .pipe(gulp.dest('./dist/assets/js'));
       done();
