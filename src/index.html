@@ -97,6 +97,11 @@
         $('<p style="color: red;">Vous devez remplir tous les champs</p>').prependTo($('#twoLove'));
 
     }else {
+        $('#offer_id').val('');
+    $("#nom").val('');
+    $('#prenom').val('');
+    $("#email").val('');
+    $("#tel").val('');
     let data= {
       "nom": nom,
       "prenom": prenom,

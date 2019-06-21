@@ -13,6 +13,15 @@ gulp.task('compressImage', function() {
         ]))
         .pipe(gulp.dest('./dist/linkedinlocaldakar/assets/images'));
 });
+gulp.task('compressSpeakers', function() {
+    return gulp.src(['./src/assets/images/speakers/*'])
+        .pipe(imagemin([
+            imageminMozjpeg({
+                quality: 35 
+            })
+        ]))
+        .pipe(gulp.dest('./dist/linkedinlocaldakar/assets/images/speakers'));
+});
 // gulp.task('compress', function(done) {
 //   gulp.src(['./dist/**/*.*'])
 //       .pipe(gzip())
