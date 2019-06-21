@@ -8,7 +8,7 @@ gulp.task('compressImage', function() {
     return gulp.src(['./src/assets/images/*'])
         .pipe(imagemin([
             imageminMozjpeg({
-                quality: 20
+                quality: 10
             })
         ]))
         .pipe(gulp.dest('./dist/linkedinlocalDakar/assets/images'));
