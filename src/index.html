@@ -36,7 +36,15 @@
     let prenom = $('#prenom').val();
     let email = $("#email").val();
     let tel = $("#tel").val();
+    if (offer_id===''|| nom ==='' || prenom ==='' || email==='' || tel===''){
+        $('<p style="color: red;">Vous devez remplir tous les champs</p>').insertBefore($('#oneLove'));
 
+    }else {
+    $('#offer_id').val('');
+    $("#nom").val('');
+    $('#prenom').val('');
+    $("#email").val('');
+    $("#tel").val('');
     let data= {
       "nom": nom,
       "prenom": prenom,
@@ -74,7 +82,7 @@
               selector.prop('disabled', false);
           }
       }).send())
-            
+    }  
 
       //.send params are optional
   }
@@ -85,7 +93,10 @@
     let prenom = $('#prenom1').val();
     let email = $("#email1").val();
     let tel = $("#tel1").val();
+    if (offer_id===''|| nom ==='' || prenom ==='' || email==='' || tel===''){
+        $('<p style="color: red;">Vous devez remplir tous les champs</p>').prependTo($('#twoLove'));
 
+    }else {
     let data= {
       "nom": nom,
       "prenom": prenom,
@@ -123,7 +134,7 @@
               selector.prop('disabled', false);
           }
       }).send())
-            
+    }
 
       //.send params are optional
   }
