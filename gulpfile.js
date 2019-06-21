@@ -23,9 +23,9 @@ gulp.task('compressSpeakers', function() {
         .pipe(gulp.dest('./dist/linkedinlocaldakar/assets/images/speakers'));
 });
 gulp.task('compress', function(done) {
-  gulp.src(['./dist/assets/js/*.*'])
+  gulp.src(['./src/assets/js/*.*'])
       .pipe(gzip())
-      .pipe(gulp.dest('./dist'));
+      .pipe(gulp.dest('./dist/assets/js'));
       done();
 });
 // gulp.task('compressImage', function(done) {
