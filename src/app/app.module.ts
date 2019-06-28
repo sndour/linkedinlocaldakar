@@ -29,8 +29,13 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes,  {
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled',
+      scrollOffset: [0, 64]
+    })
   ],
+  exports: [RouterModule],
   providers: [PaiementService],
   bootstrap: [AppComponent]
 })
