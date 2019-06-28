@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   // this.loadScripts();
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
     this.timer();
     this.loadScriptsBody();
   }
