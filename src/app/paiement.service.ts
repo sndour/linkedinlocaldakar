@@ -20,12 +20,21 @@ export class PaiementService {
     let datum = JSON.stringify(data);
     console.log('on affiche datum', datum);
     let options = this.createRequestOptions();
-    return this.http.post(this.url_base+ 'checkout', datum, {headers:options}) ;
+    return this.http.post(this.url_base+ 'checkout', datum, {headers:options});
   }
 
-  saveSubscriber(){
-
+  login(data){
+      console.log(data);
+      //const content = JSON.stringify(data);
+      let options =this.createRequestOptions();
+      return this.http.post(this.url_base+'login', data, {headers:options}); 
   }
+
+  getPayement(){
+    let options = this.createRequestOptions();
+    return this.http.get(this.url_base+'payed', {headers:options})
+  }
+
   sendEmailtoBoss(data){
       let options = this.createRequestOptions();
       return this.http.post(this.url_base+ 'email', data, {headers:options})

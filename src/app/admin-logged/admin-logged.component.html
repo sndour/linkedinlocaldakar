@@ -1,0 +1,35 @@
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li >
+        <a>Liste des paiements effectifs</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a class="btn btn-active" (click)="onSignOut()"
+           >Déconnexion</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<table class="table">
+  <tr>
+    <th>Prenom</th>
+    <th>Nom</th> 
+    <th>Email</th>
+    <th>Numéro </th>
+    <th>Prix du ticket </th>
+    <th>Code d'accès </th>
+  </tr>
+  <tr *ngFor="let paiement of paiements">
+    <td>{{paiement.prenom}}</td>
+    <td>{{paiement.nom}}</td>
+    <td>{{paiement.email}}</td>
+    <td>{{paiement.tel}}</td>
+    <td>{{paiement.price}}</td>
+    <td>{{paiement._id.substring(4, 9)}}</td>
+  </tr>
+</table>

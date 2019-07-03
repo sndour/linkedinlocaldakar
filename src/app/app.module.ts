@@ -9,10 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { PaiementService } from './paiement.service';
 import { SponsorsContactComponent } from './sponsors-contact/sponsors-contact.component';
+import { HeaderAdminComponent } from './header-admin/header-admin.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminLoggedComponent } from './admin-logged/admin-logged.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'sponsors', component: SponsorsContactComponent}
+  { path: 'sponsors', component: SponsorsContactComponent}, 
+  { path: 'login', component:AdminComponent}, 
+  { path: 'admin', component:AdminLoggedComponent}
 ]
 
 
@@ -22,7 +27,10 @@ const routes: Routes = [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    SponsorsContactComponent
+    SponsorsContactComponent,
+    HeaderAdminComponent,
+    AdminComponent,
+    AdminLoggedComponent
   ],
   imports: [
     BrowserModule,
